@@ -1,61 +1,30 @@
 //
-//  ViewController.m
+//  CreateView.m
 //  评分
 //
 //  Created by 张伟伟 on 16/7/4.
 //  Copyright © 2016年 张伟伟. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "ZWWStarView.h"
+#import "CreateView.h"
 
-#define viewW self.view.frame.size.width
-#define viewH self.view.frame.size.height
+#define viewW [UIScreen mainScreen].bounds.size.width
+#define viewH [UIScreen mainScreen].bounds.size.height
 #define scoreViewH 170
-#define scoreViewW (self.view.frame.size.width - 2*spacingLiftandRight)
+#define scoreViewW ([UIScreen mainScreen].bounds.size.width - 2*spacingLiftandRight)
 #define spacingLiftandRight 20  // 左右间距
 #define spacingUandD 10   //上下间距
 #define btnW 170
 #define btnH 40
-#define backBtnW 30
-#define backBtnH 30
+#define backBtnW 20
+#define backBtnH 20
 #define starViewH 65
 #define scoreLabelW 70
 #define scoreLabelH 30
 
-@interface ViewController ()<ZWWStarViewDelegate>
-
-@property (nonatomic ,strong) UILabel *scoreLabel;
-@property (nonatomic, strong) UIView *coverView;
-@property (nonatomic, strong) UIButton *btn;
-@property (nonatomic, strong) UIButton *backBtn;
-@property (nonatomic, strong) UIImageView *scoreView;
-@property (nonatomic, strong) ZWWStarView *starView;
-
-@end
-
-@implementation ViewController
-
-- (void)viewDidLoad {
-    
-    self.coverView = [[UIView alloc] init];
-    self.coverView.frame = self.view.frame;
-    self.coverView.backgroundColor = [UIColor lightGrayColor];
-    
-    [super viewDidLoad];
-}
-
-- (IBAction)clcik:(id)sender {
-    [self createView];
-}
-
--(void)starRatingView:(ZWWStarView *)view score:(float)score {
-    self.scoreLabel.text = [NSString stringWithFormat:@"%0.1f",score * 10 ];
-}
+@implementation CreateView
 
 -(void)createView {
-    
-    [self.view addSubview:self.coverView];
     
     self.scoreView = [[UIImageView alloc] initWithFrame:CGRectMake(spacingLiftandRight, (viewH - scoreViewH)/2, scoreViewW, scoreViewH)];
     self.scoreView.image = [UIImage imageNamed:@"scoreView.jpg"];
@@ -94,15 +63,15 @@
 }
 
 -(void)backClick {
-    [self.coverView removeFromSuperview];
+    
 }
 
 -(void)tijiao {
-    [self.coverView removeFromSuperview];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+-(void)starRatingView:(ZWWStarView *)view score:(float)score {
+    
 }
 
 @end

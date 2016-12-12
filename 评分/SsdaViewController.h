@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SsdaViewController.h
 //  评分
 //
 //  Created by 张伟伟 on 16/7/4.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SsdaViewController : UIViewController
 
 @end
-
